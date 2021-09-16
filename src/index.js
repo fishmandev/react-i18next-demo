@@ -4,10 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './i18n';
+import { Suspense } from 'react';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Suspense fallback="...is loading">
+      <App />
+    </Suspense>
   </React.StrictMode>,
   document.getElementById('root')
 );

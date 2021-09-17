@@ -4,10 +4,12 @@ import { useTranslation } from 'react-i18next';
 
 function App() {
   const { t, i18n } = useTranslation();
-
+  
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   }
+
+  document.body.dir = i18n.dir();
 
   return (
     <div className="App">
@@ -18,6 +20,9 @@ function App() {
         </button>
         <button type="button" onClick={() => changeLanguage('ru')}>
           Русский
+        </button>
+        <button type="button" onClick={() => changeLanguage('he')}>
+          עברית
         </button>
         <p>
           {t('welcomeReact')}
